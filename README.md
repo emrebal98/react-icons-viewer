@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+<!-- <div align="center" id="top"> 
+  <img src="./.github/app.gif" alt="React Icons Viewer" /> -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  &#xa0;
 
-## Available Scripts
+  <!-- <a href="https://reacticonsviewer.netlify.app">Demo</a> -->
+</div>
 
-In the project directory, you can run:
+<h1 align="center">React Icons Viewer</h1>
 
-### `npm start`
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/emrebal98/react-icons-viewer?color=56BEB8">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/emrebal98/react-icons-viewer?color=56BEB8">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/emrebal98/react-icons-viewer?color=56BEB8">
 
-### `npm test`
+  <img alt="License" src="https://img.shields.io/github/license/emrebal98/react-icons-viewer?color=56BEB8">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/emrebal98/react-icons-viewer?color=56BEB8" /> -->
 
-### `npm run build`
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/emrebal98/react-icons-viewer?color=56BEB8" /> -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/emrebal98/react-icons-viewer?color=56BEB8" /> -->
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- Status -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- <h4 align="center"> 
+	🚧  React Icons Viewer 🚀 Under construction...  🚧
+</h4> 
 
-### `npm run eject`
+<hr> -->
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/emrebal98" target="_blank">Author</a>
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :dart: About ##
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project allows you to search through the react-icons and it allows you to download the icon as png/svg. 
 
-## Learn More
+**Live: [React Icons Viewer](https://asd.com)**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Known Issues
+- Performance issue when displaying all icons
+- Not mobile friendly
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :sparkles: Features ##
 
-### Code Splitting
+:heavy_check_mark: Downlaod icon as png.\
+:heavy_check_mark: Downlaod icon as svg.\
+:heavy_check_mark: Copy icon as png.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## :rocket: Technologies ##
 
-### Analyzing the Bundle Size
+The following tools were used in this project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [React](https://pt-br.reactjs.org/)
 
-### Making a Progressive Web App
+## :white_check_mark: Requirements ##
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-### Advanced Configuration
+## :checkered_flag: Starting ##
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+# Clone this project
+$ git clone https://github.com/emrebal98/react-icons-viewer
 
-### Deployment
+# Access
+$ cd react-icons-viewer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Install dependencies
+$ npm install
 
-### `npm run build` fails to minify
+# Run the project
+$ npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# The server will initialize in the <http://localhost:3000>
+```
+
+## :memo: License ##
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+
+Made with :heart: by <a href="https://github.com/emrebal98" target="_blank">Emre BAL</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
