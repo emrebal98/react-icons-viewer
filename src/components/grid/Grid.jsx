@@ -59,8 +59,8 @@ function Grid({ items, showOptions, setItems, searching }) {
 	return (
 		<div className="icon__grid">
 			{items.map((e, index) => (
-				<Icon key={index} showOptions={showOptions} size={32} name={e.name}>
-					{e.call()}
+				<Icon key={index} showOptions={showOptions} size={32} name={e?.name}>
+					{e?.icon.call()}
 				</Icon>
 			))}
 		</div>

@@ -17,7 +17,7 @@ function Icon({ children, size = 32, showOptions, name }) {
 		// console.log(name);
 		// console.log(children);
 		showOptions({ icon: children, iconName: name, svgCode: svg.outerHTML });
-	}, []);
+	}, [children, name, showOptions]);
 
 	return (
 		<IconContext.Provider value={{ className: "icon__inline", size: `${size}px` }}>
