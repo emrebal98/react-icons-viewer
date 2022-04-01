@@ -90,7 +90,7 @@ $ npm start
 
 ## :memo: License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
 Made with :heart: by <a href="https://github.com/emrebal98" target="_blank">Emre BAL</a>
