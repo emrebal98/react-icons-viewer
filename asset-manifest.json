@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-icons-viewer/static/css/main.e96ee4f5.css",
-    "main.js": "/react-icons-viewer/static/js/main.0aa95f4b.js",
+    "main.js": "/react-icons-viewer/static/js/main.a906ff3d.js",
     "index.html": "/react-icons-viewer/index.html",
     "main.e96ee4f5.css.map": "/react-icons-viewer/static/css/main.e96ee4f5.css.map",
-    "main.0aa95f4b.js.map": "/react-icons-viewer/static/js/main.0aa95f4b.js.map"
+    "main.a906ff3d.js.map": "/react-icons-viewer/static/js/main.a906ff3d.js.map"
   },
   "entrypoints": [
     "static/css/main.e96ee4f5.css",
-    "static/js/main.0aa95f4b.js"
+    "static/js/main.a906ff3d.js"
   ]
 }
