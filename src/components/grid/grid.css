@@ -1,0 +1,8 @@
+.icon__grid {
+	display: grid;	
+	grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+	gap: 1rem;
+	max-width: 1000px;
+	width: 100%;
+	margin-top: 1rem;
+}
