@@ -48,7 +48,7 @@
 
 This project allows you to search through the react-icons and it allows you to download the icon as png/svg. 
 
-**Live: [React Icons Viewer](https://asd.com)**
+**Live: [React Icons Viewer](https://emrebal98.github.io/react-icons-viewer/)**
 
 ### Known Issues
 - Performance issue when displaying all icons
