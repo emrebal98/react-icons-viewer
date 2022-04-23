@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
 	AI,
 	BS,
@@ -23,9 +22,7 @@ import {
 	WI,
 	CG,
 } from "../../icons";
-
 import { Search, Grid, Options } from "../../components";
-
 import "./home.css";
 
 function Home() {
@@ -58,8 +55,6 @@ function Home() {
 
 	const [items, setItems] = useState(all[0]);
 	const [searchItems, setSearchItems] = useState(all[0]);
-	// const [filter, setFilter] = useState();
-	// const [searching, setSearching] = useState(false);
 
 	function handleClose(e) {
 		setShow(false);
@@ -67,21 +62,17 @@ function Home() {
 
 	const showOptions = (selected) => {
 		setShow(true);
-		// console.log(typeof selected);
 		setSelected(selected);
-		// console.log(selected);
 	};
 
 	return (
 		<main className="home">
 			<Search
 				all={all}
-				searchItems={searchItems}
-				setSearchItems={setSearchItems}
+				searchItems={{ get: searchItems, set: setSearchItems }}
 				setItems={setItems}
-				// setSearching={setSearching}
 			/>
-			<Grid showOptions={showOptions} items={items} /*searching={searching} */ />
+			<Grid showOptions={showOptions} items={items} selected={selected} />
 			<Options show={show} selected={selected} handleClose={handleClose} />
 		</main>
 	);

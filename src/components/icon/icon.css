@@ -2,14 +2,10 @@
 	text-align: center;
 	cursor: pointer;
 	color: #7d7d7d;
-	/* width: 7rem;
-	height: 7em; */
-	padding: 1rem 0;
-	/* margin: 1rem; */
+	padding: 1rem;
+	margin: 0 0.3rem;
 	border-radius: 1rem;
-	max-width: 7rem;
-	/* z-index: 999; */
-	/* outline: 1px solid red; */
+	width: 7rem;
 }
 
 .icon-container:hover {
@@ -18,12 +14,16 @@
 		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.icon-container.active {
+	background-color: white;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 .icon__title {
 	display: block;
-	/* width: 50px;  */
 	text-align: center;
 	font-size: 11px;
-
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;

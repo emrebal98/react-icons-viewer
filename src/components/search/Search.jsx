@@ -1,16 +1,11 @@
-import React, { useState /*, useEffect */ } from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Filter } from "../";
 import "./search.css";
 
-function Search({ searchItems, setSearchItems, setItems, all, setSearching }) {
+function Search({ searchItems, setItems, all }) {
 	const [search, setSearch] = useState();
 	const [focus, setFocus] = useState(false);
-
-	// useEffect(() => {
-	// 	if (search?.length < 3 || !search) setSearching(false);
-	// 	else setSearching(true);
-	// }, [search]);
 
 	function handleFocus(e) {
 		setFocus(true);
@@ -25,13 +20,10 @@ function Search({ searchItems, setSearchItems, setItems, all, setSearching }) {
 	}
 
 	function handleSearch(e) {
-		// if (search.length > 2) {
-		const result = searchItems.filter((v) =>
+		const result = searchItems.get.filter((v) =>
 			v.name.toLowerCase().includes(search.toLowerCase())
 		);
 		setItems(result);
-
-		// }
 	}
 
 	return (
@@ -49,7 +41,7 @@ function Search({ searchItems, setSearchItems, setItems, all, setSearching }) {
 				onChange={handleChange}
 				onKeyUp={handleSearch}
 			/>
-			<Filter all={all} setItems={setItems} setSearchItems={setSearchItems} />
+			<Filter all={all} setItems={setItems} searchItems={searchItems} />
 		</div>
 	);
 }

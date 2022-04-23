@@ -6,7 +6,6 @@
 	border-radius: 0.5rem;
 	padding: 0 1rem;
 	margin: 0 1rem;
-	/* outline: 1px solid red; */
 }
 
 .search__field.focus {
@@ -19,7 +18,6 @@
 	top: 0.6rem;
 	font-size: 32px;
 	color: #7d7d7d;
-	/* text-align: center; */
 	margin-right: 1rem;
 }
 .search__field input {

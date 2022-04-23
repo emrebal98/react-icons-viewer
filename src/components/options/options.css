@@ -1,11 +1,12 @@
 .options {
 	display: none;
-	/* width: 250px; */
+	/* width: 650px; */
 	/* height: 125px; */
 	background-color: white;
 	position: fixed;
 	bottom: 0.5rem;
 	right: 0.5rem;
+
 	/* margin: 0 0.5rem 0.5rem 0; */
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1rem 0.1rem rgb(0, 0, 0, 0.3);
@@ -91,7 +92,7 @@
 .options .image-info .icon-usage button {
 	border: none;
 	background: none;
-	cursor: pointer;	
+	cursor: pointer;
 	display: block;
 }
 
@@ -126,7 +127,7 @@
 .options .image-info .download-settings .slider:hover {
 	opacity: 1; /* Fully shown on mouse-over */
 }
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
 .options .image-info .download-settings .slider::-webkit-slider-thumb {
 	-webkit-appearance: none; /* Override default look */
 	appearance: none;
@@ -178,4 +179,51 @@
 	font-size: 16px;
 	margin: 0 0.5rem 0 0;
 	color: #484848;
+}
+
+/* Mobile */
+.options.mobile {
+	width: 100%;
+	bottom: 0;
+	right: 0;
+}
+
+.options.mobile .image-container {
+	width: 30%;
+	height: 30%;
+	margin: 0.5rem;
+}
+.options.mobile .image-info {
+	margin: 0.5rem 0.5rem;
+}
+
+.options.mobile .image-info .icon-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+}
+
+.options.mobile .image-info .icon-usage {
+	display: none;
+}
+
+.options.mobile .image-info .download-settings {
+	display: none;
+}
+.options.mobile .image-info .download-buttons {
+	margin: 0;
+	flex-wrap: wrap;
+}
+
+.options.mobile .image-info .download-buttons button {
+	width: 100%;
+	margin: 0;
+}
+
+.options.mobile .image-info .download-buttons button:first-child {
+	margin-right: 0.5rem;
+}
+.options.mobile .image-info .download-buttons button:nth-child(-n + 2) {
+	margin-bottom: 0.5rem;
+	flex: calc(50% - 0.5rem);
 }

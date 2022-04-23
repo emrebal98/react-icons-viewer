@@ -2,28 +2,33 @@ import React from "react";
 import { IconContext } from "react-icons";
 import "./icon.css";
 
-function Icon({ children, size = 32, showOptions, name }) {
+function Icon({ size = 32, showOptions, icon, selected }) {
 	const ref = React.useRef();
 	const onClick = React.useCallback(() => {
 		if (ref.current === undefined) {
 			return;
 		}
-
+		//Get the svg of the selected icon
 		let svg = ref.current.children[0].cloneNode(true);
-		// svg.setAttribute("height", `${size}px`);
-		// svg.setAttribute("width", `${size}px`);
-		// navigator.clipboard.writeText(svg.outerHTML);
-		// setOpen(true);
-		// console.log(name);
-		// console.log(children);
-		showOptions({ icon: children, iconName: name, svgCode: svg.outerHTML });
-	}, [children, name, showOptions]);
+		// Show options window
+		showOptions({
+			icon: icon?.icon.call(),
+			iconName: icon?.name,
+			svgCode: svg.outerHTML,
+		});
+	}, [icon?.icon, icon?.name, showOptions]);
 
 	return (
 		<IconContext.Provider value={{ className: "icon__inline", size: `${size}px` }}>
-			<div className="icon-container" onClick={onClick} ref={ref}>
-				{children}
-				<span className="icon__title">{name}</span>
+			<div
+				className={`icon-container${
+					selected?.iconName === icon?.name ? ` active` : ``
+				}`}
+				onClick={onClick}
+				ref={ref}
+			>
+				{icon?.icon.call()}
+				<span className="icon__title">{icon?.name}</span>
 			</div>
 		</IconContext.Provider>
 	);

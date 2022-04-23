@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-// import { CopyBlock, atomOneDark } from "react-code-blocks";
+import React, { useState, useEffect, useRef } from "react";
+import { useWindowDimensions } from "./../../hooks";
 import { AiOutlineCopy, AiFillCopy } from "react-icons/ai";
 import { HiDownload } from "react-icons/hi";
 import { GiCancel } from "react-icons/gi";
@@ -8,27 +8,42 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function Options({ selected, show, handleClose }) {
+	// This ref is connected to the options
+	const optionsRef = useRef();
+	// The width of the screen
+	const { width } = useWindowDimensions();
+	// The state of mobile version of options
+	const [mobile, setMobile] = useState(false);
+
 	const [size, setSize] = useState(24);
 	const [clicked, setClicked] = useState(false);
 
+	// Triggers when options window open
 	useEffect(() => {
 		setClicked(false);
-	}, [selected]);
+		//Control options windows fit on current screen
+		let optionsWidth = optionsRef.current.clientWidth;
+		if (optionsWidth >= width) setMobile(true);
+		else setMobile(false);
+	}, [selected, width]);
 
-	const handleCopy = () => {
-		setClicked(true);
-		navigator.clipboard.writeText(codeText);
-		setTimeout(() => {
-			setClicked(false);
-		}, 1000);
-	};
-
+	// The text of the icon usage on react
 	const codeText =
 		selected &&
 		`import { ${selected.iconName} } from "react-icons/${selected.iconName
 			.slice(0, 2)
 			.toLowerCase()}";`;
 
+	// Handles copy svg button click
+	function handleCopy() {
+		setClicked(true);
+		navigator.clipboard.writeText(codeText);
+		setTimeout(() => {
+			setClicked(false);
+		}, 1000);
+	}
+
+	// Handles download as png button
 	function handleDownloadAsPNG(e) {
 		const svg = {
 			name: selected.iconName,
@@ -48,7 +63,6 @@ function Options({ selected, show, handleClose }) {
 			canvas.setAttribute("width", svg.width);
 			canvas.setAttribute("height", svg.height);
 			const context = canvas.getContext("2d");
-			//context.clearRect(0, 0, w, h);
 			context.drawImage(img_to_download, 0, 0, svg.width, svg.height);
 			const dataURL = canvas.toDataURL("image/png");
 			if (window.navigator.msSaveBlob) {
@@ -64,7 +78,7 @@ function Options({ selected, show, handleClose }) {
 			//canvas.parentNode.removeChild(canvas);
 		};
 	}
-
+	// Handles download as svg button
 	function handleDownloadAsSVG() {
 		const svg = {
 			name: selected.iconName,
@@ -81,7 +95,10 @@ function Options({ selected, show, handleClose }) {
 	}
 
 	return (
-		<div className={show ? "options show" : "options"}>
+		<div
+			className={`options${mobile ? ` mobile` : ``}${show ? ` show` : ``}`}
+			ref={optionsRef}
+		>
 			<button className="options__close" onClick={handleClose}>
 				<GiCancel />
 			</button>
@@ -90,16 +107,6 @@ function Options({ selected, show, handleClose }) {
 			<div className="image-info">
 				<div className="icon-name">{selected && selected.iconName}</div>
 				<div className="icon-usage">
-					{/* <CopyBlock
-						text={`import { ${
-							selected.iconName
-						} } from "react-icons/${selected.iconName.slice(0,2).toLowerCase()}";`}
-						language={"jsx"}
-						showLineNumbers={false}
-						theme={atomOneDark}
-						codeBlock
-					/> */}
-
 					<SyntaxHighlighter
 						language="jsx"
 						style={nightOwl}
@@ -121,7 +128,7 @@ function Options({ selected, show, handleClose }) {
 						defaultValue={24}
 						step={12}
 						onInput={(e) => {
-							// console.log(e.target.value);
+							// Set the selected size of icon for downloading as png
 							setSize(e.target.value);
 						}}
 					/>

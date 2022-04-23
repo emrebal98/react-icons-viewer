@@ -1,68 +1,58 @@
-import React /*, { useState, useEffect }*/ from "react";
+import React from "react";
 import { Icon } from "../";
-// import InfiniteScroll from "react-infinite-scroll-component";
+import { List, AutoSizer } from "react-virtualized";
 import "./grid.css";
 
-function Grid({ items, showOptions, setItems, searching }) {
-	// const [count, setCount] = useState({
-	// 	prev: 0,
-	// 	next: 500,
-	// });
-	// const [hasMore, setHasMore] = useState(true);
-	// const [current, setCurrent] = useState(items.slice(count.prev, count.next));
-	// const getMoreData = () => {
-	// 	if (current.length === items.length) {
-	// 		setHasMore(false);
-	// 		return;
-	// 	}
-	// 	setTimeout(() => {
-	// 		setCurrent(current.concat(items.slice(count.prev + 10, count.next + 10)));
-	// 	}, 100);
-	// 	setCount((prevState) => ({
-	// 		prev: prevState.prev + 10,
-	// 		next: prevState.next + 10,
-	// 	}));
-	// };
+function Grid({ items, showOptions, selected }) {
+	function rowRenderer({ index, key, style }, itemsPerRow) {
+		const rows = [];
+		const fromIndex = index * itemsPerRow;
+		const toIndex = Math.min(fromIndex + itemsPerRow, items.length);
 
-	// useEffect(() => {
-	// 	if (searching) setCurrent(items);
-	// 	else setCurrent(items.slice(count.prev, count.next));
+		//List of items on per row
+		for (let i = fromIndex; i < toIndex; i++) {
+			rows.push(
+				<Icon
+					key={i}
+					showOptions={showOptions}
+					size={32}
+					icon={items[i]}
+					selected={selected}
+				/>
+			);
+		}
 
-	// 	console.log("asd");
-	// }, [searching]);
+		return (
+			<div className="icon__grid_row" key={key} style={style}>
+				{rows}
+			</div>
+		);
+	}
 
-	// return !searching ? (
-	// 	<InfiniteScroll
-	// 		dataLength={current.length}
-	// 		next={getMoreData}
-	// 		hasMore={hasMore}
-	// 		loader={<h4>Loading...</h4>}
-	// 	>
-	// 		<div className="icon__grid">
-	// 			{current.map((e, index) => (
-	// 				<Icon key={index} showOptions={showOptions} size={32} name={e.name}>
-	// 					{e.call()}
-	// 				</Icon>
-	// 			))}
-	// 		</div>
-	// 	</InfiniteScroll>
-	// ) : (
-	// 	<div className="icon__grid">
-	// 		{items.map((e, index) => (
-	// 			<Icon key={index} showOptions={showOptions} size={32} name={e.name}>
-	// 				{e.call()}
-	// 			</Icon>
-	// 		))}
-	// 	</div>
-	// );
+	const ITEM_SIZE = 120; // row
 
 	return (
 		<div className="icon__grid">
-			{items.map((e, index) => (
-				<Icon key={index} showOptions={showOptions} size={32} name={e?.name}>
-					{e?.icon.call()}
-				</Icon>
-			))}
+			{items && (
+				<AutoSizer>
+					{({ height, width }) => {
+						const itemsPerRow = Math.floor(width / ITEM_SIZE);
+						const rowCount = Math.ceil(items.length / itemsPerRow);
+
+						return (
+							<List
+								width={width}
+								height={height}
+								rowCount={rowCount}
+								rowHeight={ITEM_SIZE}
+								rowRenderer={(param) => {
+									return rowRenderer(param, itemsPerRow);
+								}}
+							/>
+						);
+					}}
+				</AutoSizer>
+			)}
 		</div>
 	);
 }

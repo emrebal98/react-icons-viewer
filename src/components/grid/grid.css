@@ -1,8 +1,14 @@
 .icon__grid {
-	display: grid;	
-	grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-	gap: 1rem;
-	max-width: 1000px;
+	height: 100%;
 	width: 100%;
-	margin-top: 1rem;
+}
+
+.icon__grid_row {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
