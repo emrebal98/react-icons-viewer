@@ -50,10 +50,6 @@ This project allows you to search through the react-icons and it allows you to d
 
 **Live: [React Icons Viewer](https://emrebal98.github.io/react-icons-viewer/)**
 
-### Known Issues
-- Performance issue when displaying all icons
-- Not mobile friendly
-
 ## :sparkles: Features ##
 
 :heavy_check_mark: Downlaod icon as png.\
