@@ -15,8 +15,9 @@ function Icon({ size = 32, showOptions, icon, selected }) {
 			icon: icon?.icon.call(),
 			iconName: icon?.name,
 			svgCode: svg.outerHTML,
+			library: icon?.library,
 		});
-	}, [icon?.icon, icon?.name, showOptions]);
+	}, [icon?.icon, icon?.library, icon?.name, showOptions]);
 
 	return (
 		<IconContext.Provider value={{ className: "icon__inline", size: `${size}px` }}>

@@ -30,9 +30,7 @@ function Options({ selected, show, handleClose }) {
 	// The text of the icon usage on react
 	const codeText =
 		selected &&
-		`import { ${selected.iconName} } from "react-icons/${selected.iconName
-			.slice(0, 2)
-			.toLowerCase()}";`;
+		`import { ${selected.iconName} } from "react-icons/${selected.library}";`;
 
 	// Handles copy svg button click
 	function handleCopy() {
