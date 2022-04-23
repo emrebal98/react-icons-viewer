@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-icons-viewer/static/css/main.e96ee4f5.css",
-    "main.js": "/react-icons-viewer/static/js/main.a906ff3d.js",
+    "main.css": "/react-icons-viewer/static/css/main.5fd97639.css",
+    "main.js": "/react-icons-viewer/static/js/main.da67d501.js",
     "index.html": "/react-icons-viewer/index.html",
-    "main.e96ee4f5.css.map": "/react-icons-viewer/static/css/main.e96ee4f5.css.map",
-    "main.a906ff3d.js.map": "/react-icons-viewer/static/js/main.a906ff3d.js.map"
+    "main.5fd97639.css.map": "/react-icons-viewer/static/css/main.5fd97639.css.map",
+    "main.da67d501.js.map": "/react-icons-viewer/static/js/main.da67d501.js.map"
   },
   "entrypoints": [
-    "static/css/main.e96ee4f5.css",
-    "static/js/main.a906ff3d.js"
+    "static/css/main.5fd97639.css",
+    "static/js/main.da67d501.js"
   ]
 }
