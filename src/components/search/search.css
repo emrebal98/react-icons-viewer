@@ -26,7 +26,8 @@
 	line-height: 56px;
 	height: 56px;
 	width: 100%;
+	padding-right: 0.5rem;
 	border: none;
 	box-shadow: none;
-	outline: none;
+	outline: none;	
 }

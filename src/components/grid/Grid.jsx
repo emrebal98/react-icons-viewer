@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../context/";
 import { Icon } from "../";
 import { List, AutoSizer } from "react-virtualized";
 import "./grid.css";
 
-function Grid({ items, showOptions, selected }) {
+function Grid({ showOptions, selected }) {
+	const { displayItems } = useContext(Context);
+
 	function rowRenderer({ index, key, style }, itemsPerRow) {
 		const rows = [];
 		const fromIndex = index * itemsPerRow;
-		const toIndex = Math.min(fromIndex + itemsPerRow, items.length);
+		const toIndex = Math.min(fromIndex + itemsPerRow, displayItems.length);
 
 		//List of items on per row
 		for (let i = fromIndex; i < toIndex; i++) {
@@ -16,7 +19,7 @@ function Grid({ items, showOptions, selected }) {
 					key={i}
 					showOptions={showOptions}
 					size={32}
-					icon={items[i]}
+					icon={displayItems[i]}
 					selected={selected}
 				/>
 			);
@@ -33,11 +36,11 @@ function Grid({ items, showOptions, selected }) {
 
 	return (
 		<div className="icon__grid">
-			{items && (
+			{displayItems && (
 				<AutoSizer>
 					{({ height, width }) => {
 						const itemsPerRow = Math.floor(width / ITEM_SIZE);
-						const rowCount = Math.ceil(items.length / itemsPerRow);
+						const rowCount = Math.ceil(displayItems.length / itemsPerRow);
 
 						return (
 							<List

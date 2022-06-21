@@ -5,3 +5,29 @@
 	justify-content: center;
 	height: 100%;
 }
+
+.home .github-icon {
+	text-decoration: none;
+	color: unset;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.home .github-icon:hover {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.home .github-icon svg {
+	margin-left: 0.5rem;
+	font-size: 2rem;
+}
+
+@media (max-width: 840px) {
+	.home .github-icon {
+		display: none;
+	}
+}

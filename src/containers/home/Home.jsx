@@ -1,60 +1,11 @@
 import React, { useState } from "react";
-import {
-	AI,
-	BS,
-	BI,
-	DI,
-	FI,
-	FC,
-	FA,
-	GI,
-	GO,
-	GR,
-	HI,
-	IM,
-	IO,
-	IO5,
-	MD,
-	RI,
-	SI,
-	TI,
-	VSC,
-	WI,
-	CG,
-} from "../../icons";
 import { Search, Grid, Options } from "../../components";
+import { AiFillGithub } from "react-icons/ai";
 import "./home.css";
 
 function Home() {
-	const all = [
-		AI,
-		BS,
-		BI,
-		DI,
-		FI,
-		FC,
-		FA,
-		GI,
-		GO,
-		GR,
-		HI,
-		IM,
-		IO,
-		IO5,
-		MD,
-		RI,
-		SI,
-		TI,
-		VSC,
-		WI,
-		CG,
-	];
-
 	const [show, setShow] = useState(false);
 	const [selected, setSelected] = useState();
-
-	const [items, setItems] = useState(all[0]);
-	const [searchItems, setSearchItems] = useState(all[0]);
 
 	function handleClose(e) {
 		setShow(false);
@@ -67,12 +18,18 @@ function Home() {
 
 	return (
 		<main className="home">
-			<Search
-				all={all}
-				searchItems={{ get: searchItems, set: setSearchItems }}
-				setItems={setItems}
-			/>
-			<Grid showOptions={showOptions} items={items} selected={selected} />
+			<Search />
+			<a
+				className="github-icon"
+				href="https://github.com/emrebal98/react-icons-viewer"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Give it a star
+				<AiFillGithub />
+			</a>
+
+			<Grid showOptions={showOptions} selected={selected} />
 			<Options show={show} selected={selected} handleClose={handleClose} />
 		</main>
 	);
