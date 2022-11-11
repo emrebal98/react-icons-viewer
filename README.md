@@ -52,15 +52,15 @@ This project allows you to search through the react-icons and it allows you to d
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Downlaod icon as png.\
-:heavy_check_mark: Downlaod icon as svg.\
-:heavy_check_mark: Copy icon as png.
+:heavy_check_mark: Download icon as png.\
+:heavy_check_mark: Download icon as svg.\
+:heavy_check_mark: Copy icon as svg.
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
-- [React](https://pt-br.reactjs.org/)
+- [React](https://reactjs.org/)
 
 ## :white_check_mark: Requirements ##
 
